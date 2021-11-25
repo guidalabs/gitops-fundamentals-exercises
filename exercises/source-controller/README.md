@@ -5,13 +5,15 @@ The main component of Flux is the source controller. It's main role is to downlo
 1. Create a Flux Gitrepository source with SSH by using the following command.
 ```
 flux create source git flux-fundamentals \
-    --url=ssh://{REPO_URL} \
+    --url=https://{REPO_URL} \
+    --username={PERSONAL_ACCESS_TOKEN_NAME} \
+    --password={PERSONAL_ACCESS_TOKEN} \
     --branch=main \
-    --interval=10m
+    --interval=10m \
     -n {NAMESPACE}
 ```
 
-> REPO_URL example > --url=ssh://git@github.com/guidalabs/gitops-fundamentals-exercises.git
+> REPO_URL example > --url=https://github.com/guidalabs/gitops-fundamentals-exercises.git
 
 2. Flux will generate a public key and waits untill you have added this key to your repo. Copy the generated deploy key and add to your git repository. At Github you go to Repository > Settings > Deploy keys.
 

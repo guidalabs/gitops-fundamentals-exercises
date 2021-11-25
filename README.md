@@ -1,5 +1,5 @@
 # GitOps Fundamentals Exercises
-This repository contains exercises for the GitOps fundamentals training. Below you find some
+This repository contains exercises for the GitOps fundamentals training.
 
 ## What is GitOps?
 ---
@@ -51,8 +51,11 @@ kubectl get pods -n <NAMESPACE>
 ```
 
 
-### Fork or copy this repository
-We are going to connect a Git Repository to Flux and use this repo to create, update and remove an application via git changes. It is possible to fork this repository under your personal user if you are using Github. It is also possible to use another Git repository like Gitlab or Bitbucket and copy the files to this repository. As long as you have your own repository with full access you should be fine.
+### Fork or copy this repository and create a Personal Access Token.
+We are going to connect a Git Repository to Flux and use this repo to create, update and remove an application via git changes. It is possible to fork this repository under your personal user if you are using Github. It is also possible to use another Git repository like Gitlab or Bitbucket and copy the files to this repository. As long as you have your own repository with full access you should be fine. Follow the instructions below to create a Personal Access Token for your Git repository. Scope the permission level for this token to read only.
+
+- Create a Personal Access Token for Github https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+- Create a Personal Access Token for Gitlab https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html
 
 ## Exercises
 ---

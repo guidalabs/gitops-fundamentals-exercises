@@ -23,7 +23,10 @@ With the Flux Kustomize controller you are able to watch for Kustomization objec
 kubectl create serviceaccount flux-reconciler -n {NAMESPACE}
 ```
 ```
-kubectl create rolebinding flux-reconciler-admin-binding --clusterrole=admin --serviceaccount={NAMESPACE}:flux-reconciler
+kubectl create rolebinding flux-reconciler-admin-binding \
+--clusterrole=admin \
+--serviceaccount={NAMESPACE}:flux-reconciler \
+-n {NAMESPACE}
 ```
 2. Patch {NAMESPACE} in the file exercises/kustomize-controller/staging/podinfo/kustomization.yaml with your own namespace.
 3. Push these changes to git and reconcile your source so these changes will be available for Flux.
@@ -32,7 +35,13 @@ flux reconcile source git flux-fundamentals -n {NAMESPACE}
 ```
 4. Create the Kustomization resource.
 ```
-flux create kustomization staging --service-account=flux-reconciler --source=flux-fundamentals --path="./exercises/kustomize-controller/staging" --prune=true --interval=10m -n {NAMESPACE}
+flux create kustomization staging \
+--service-account=flux-reconciler \
+--source=flux-fundamentals \
+--path="./exercises/kustomize-controller/staging" \
+--prune=true \
+--interval=10m \
+-n {NAMESPACE}
 ```
 > With this Kustomization Flux will look for kustomization.yaml files in the given directory and will apply the constructed Kubernetes manifests. Every 10 minutes it will sync.
 
