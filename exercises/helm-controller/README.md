@@ -59,6 +59,9 @@ flux delete helmrelease podinfo -n {NAMESPACE}
 flux delete kustomization development -n {NAMESPACE}
 ```
 ```
+flux delete kustomization staging -n {NAMESPACE}
+```
+```
 flux delete source helm podinfo -n {NAMESPACE}
 ```
 ```
