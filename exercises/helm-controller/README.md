@@ -8,13 +8,13 @@ In the following exercise we are going to extend the podinfo application we depl
 
 1. Create a Flux HelmRepository source that will make the podinfo Helm Chart available for Flux.
 ```
-flux create source helm podinfo --url=https://stefanprodan.github.io/podinfo -n {NAMESPACE}
+flux create source helm podinfo --url=https://stefanprodan.github.io/podinfo -n <NAMESPACE>
 ```
 2. Export this Helm Source as a yaml file.
 ```
-flux export source helm podinfo -n {NAMESPACE} > cluster/flux-podinfo-helm-source.yaml
+flux export source helm podinfo -n <NAMESPACE> > cluster/flux-podinfo-helm-source.yaml
 ```
-3. Patch {NAMESPACE}, {YOUR_NAME} and {COMPANY} in the file exercises/helm-controller/development/podinfo/release.yaml with your own namespace/name/company.
+3. Patch \<NAMESPACE>, \<YOUR_NAME> and \<COMPANY> in the file exercises/helm-controller/development/podinfo/release.yaml with your own namespace/name/company.
 
 4. Push these changes to git and reconcile your Git source so these changes will be available for Flux.
 
@@ -25,51 +25,51 @@ flux create kustomization development --service-account=flux-reconciler \
 --path="./exercises/helm-controller/development" \
 --prune=true \
 --interval=10m \
--n {NAMESPACE}
+-n <NAMESPACE>
 ```
 5. Export this Kustomization as a yaml file.
 ```
-flux export kustomization development -n {NAMESPACE} > cluster/flux-development-kustomization.yaml
+flux export kustomization development -n <NAMESPACE> > cluster/flux-development-kustomization.yaml
 ```
 6. Validate that your HelmRelease is deployed
 ```
-flux get helmreleases -n {NAMESPACE}
+flux get helmreleases -n <NAMESPACE>
 ```
 ```
-kubectl get pods -n {NAMESPACE}
+kubectl get pods -n <NAMESPACE>
 ```
-7. Go to {YOUR_NAME}.{COMPANY}.app.guida.io and see that the application is publicly available now.
+7. Go to \<YOUR_NAME>.\<COMPANY>.app.guida.io and see that the application is publicly available now.
 
 With Flux it is possible to configure a semver expression for the chart version in your HelmRelease. The Helm controller will automatically upgrade once there is a new version of your chart available.
 
 8. Configure the semantic versioning expression ">=6.0.2 <7.0.0" in the file exercises/helm-controller/development/podinfo/release.yaml. Push these changes to git and reconcile the kustomization.
 ```
-flux reconcile kustomization development --with-source -n {NAMESPACE}
+flux reconcile kustomization development --with-source -n <NAMESPACE>
 ```
 
 9. Confirm that the latest podinfo chart version (<7.0.0) is deployed. You can check the podinfo chart releases at: https://github.com/stefanprodan/podinfo/releases
 ```
-flux get helmreleases -n {NAMESPACE}
+flux get helmreleases -n <NAMESPACE>
 ```
 10. Cleanup all resources
 ```
-flux delete helmrelease podinfo -n {NAMESPACE}
+flux delete helmrelease podinfo -n <NAMESPACE>
 ```
 ```
-flux delete kustomization development -n {NAMESPACE}
+flux delete kustomization development -n <NAMESPACE>
 ```
 ```
-flux delete kustomization staging -n {NAMESPACE}
+flux delete kustomization staging -n <NAMESPACE>
 ```
 ```
-flux delete source helm podinfo -n {NAMESPACE}
+flux delete source helm podinfo -n <NAMESPACE>
 ```
 ```
-flux delete source git flux-fundamentals -n {NAMESPACE}
+flux delete source git flux-fundamentals -n <NAMESPACE>
 ```
 ```
-flux delete serviceaccount flux-reconciler -n {NAMESPACE}
+flux delete serviceaccount flux-reconciler -n <NAMESPACE>
 ```
 ```
-flux delete rolebinding flux-reconciler-admin-binding -n {NAMESPACE}
+flux delete rolebinding flux-reconciler-admin-binding -n <NAMESPACE>
 ```
