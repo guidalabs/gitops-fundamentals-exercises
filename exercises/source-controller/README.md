@@ -15,21 +15,18 @@ flux create source git flux-fundamentals \
 
 > REPO_URL example > --url=https://github.com/guidalabs/gitops-fundamentals-exercises.git
 
-2. Flux will generate a public key and waits untill you have added this key to your repo. Copy the generated deploy key and add to your git repository. At Github you go to Repository > Settings > Deploy keys.
-
-3. Continue the installation
-4. Your source should now be added. Verify that the git source is added correctly by running:
+2. Your source should now be added. Verify that the git source is added correctly by running:
 ```
 flux get source git fundamentals -n <NAMESPACE>
 ```
-5. Export this Git Source as a yaml file.
+3. Export this Git Source as a yaml file.
 ```
 flux export source git flux-fundamentals -n <NAMESPACE> > cluster/flux-source.yaml
 ```
-6. Push these changes to Git.
-7. Your Git repository will be synced every 10 minutes, but you can also manually reconcile your repository by running:
+4. Push these changes to Git.
+5. Your Git repository will be synced every 10 minutes, but you can also manually reconcile your repository by running:
 ```
 flux reconcile source git flux-fundamentals -n <NAMESPACE>
 ```
-8. Confirm that the fetched revision matches your latest git commit.
-9. (BONUS) Create a flux git source from a public git repository.
+6. Confirm that the fetched revision matches your latest git commit.
+7. (BONUS) Create a flux git source from a public git repository.
