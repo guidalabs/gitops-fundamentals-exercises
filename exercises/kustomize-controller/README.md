@@ -83,7 +83,7 @@ flux export kustomization kustomize-apps > cluster/staging/flux-kustomize-apps-k
 flux export kustomization cluster > cluster/staging/flux-cluster-kustomization.yaml
 ```
 ```
-flux export kustomization cluster > cluster/staging/flux-repositories-kustomization.yaml
+flux export kustomization repositories > cluster/staging/flux-repositories-kustomization.yaml
 ```
 
 8. Validate if there is a podinfo deployment in your namespace
