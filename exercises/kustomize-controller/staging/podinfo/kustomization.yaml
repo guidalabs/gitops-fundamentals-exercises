@@ -3,5 +3,5 @@ kind: Kustomization
 namespace: <NAMESPACE>
 resources:
   - ../../base/podinfo
-patchesStrategicMerge:
-  - patch.yaml
+patches:
+  - path: patch.yaml
