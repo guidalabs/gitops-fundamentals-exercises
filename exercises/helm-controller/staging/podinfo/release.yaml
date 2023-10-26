@@ -35,6 +35,6 @@ spec:
             - path: /
               pathType: ImplementationSpecific
       tls:
-       - secretName: podinfo-tls
-         hosts:
-           - <YOUR_NAME>.<COMPANY>.app.guida.io
+        - secretName: podinfo-tls
+          hosts:
+            - <YOUR_NAME>.<COMPANY>.app.guida.io
