@@ -58,10 +58,18 @@ kubectl config set-context --current --namespace=<NAMESPACE>
 > When you performed steps 3 & 4 you can ignore -n \<NAMESPACE> during the exercises.
 
 ### Fork or copy this repository and create a Personal Access Token.
-We are going to connect a Git Repository to Flux and use this repo to create, update and remove an application via git changes. It is possible to fork this repository under your personal user if you are using Github. It is also possible to use another Git repository like Gitlab or Bitbucket and copy the files to this repository. As long as you have your own repository with full access you should be fine. Follow the instructions below to create a Personal Access Token for your Git repository. Scope the permission level for this token to read only.
+We are going to connect a Git Repository to Flux and use this repo to create, update and remove an application via git changes. It is possible to fork this repository under your personal user if you are using Github. It is also possible to use another Git repository like Gitlab or Bitbucket and copy the files to this repository. As long as you have your own repository with full access you should be fine. Follow the instructions below to create a Personal Access Token for your Git repository. Scope the permission level for this token to read-write on your forked repository. Read is needed for the controller, the write is used for you locally to be able to push to Github/Gitlab.
+For production a read is sufficient most of the time (except when using the imageAutomationController).
 
 - Create a Personal Access Token for Github https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 - Create a Personal Access Token for Gitlab https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html
+
+### Clone your brand new fork
+
+Use you HTTPS url from the green clone button:
+```
+git clone https://<your repo>
+```
 
 ## Exercises
 ---

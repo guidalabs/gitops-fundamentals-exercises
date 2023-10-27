@@ -33,6 +33,12 @@ flux export source git flux-fundamentals > cluster/staging/flux-source.yaml
 flux export source helm podinfo > repositories/podinfo.yaml
 ```
 7. Push these changes to Git.
+```
+git push --upstream origin main
+```
+This will ask for a username and a password. Your username is the login name for Github.
+The password is the created personal access token from the main README.
+
 8. Your Git repository will be synced every 10 minutes, but you can also manually reconcile your repository by running:
 ```
 flux reconcile source git flux-fundamentals
