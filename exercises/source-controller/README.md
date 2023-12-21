@@ -26,7 +26,7 @@ flux get source git flux-fundamentals
 ```
 flux export source git flux-fundamentals > cluster/staging/flux-source.yaml
 ```
-5. Figure out a way to create a flux Helm source from the public helm repository podinfo (https://stefanprodan.github.io/podinfo)
+5. Figure out a way to create a Flux Helm source for the podinfo app. The docs of the app are in this repository: https://github.com/stefanprodan/podinfo. Tip: use `flux help`
 
 6. Confirm that your Helm source is ready and export this as a yaml file as well.
 ```
