@@ -32,7 +32,7 @@ flux export source git flux-fundamentals > cluster/staging/flux-source.yaml
 ```
 flux export source helm podinfo > repositories/podinfo.yaml
 ```
-7. Push these changes to Git.
+7. Commit the created files and push these changes to Git.
 ```
 git push --upstream origin main
 ```
