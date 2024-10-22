@@ -1,0 +1,14 @@
+---
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-acme-challenge
+  # TODO: fill in
+  namespace: ""
+spec:
+  endpointSelector:
+    matchExpressions:
+      - key: acme.cert-manager.io/http01-solver
+        operator: Exists
+  # TODO: fill in
+  ingress:

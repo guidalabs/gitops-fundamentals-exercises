@@ -28,6 +28,7 @@ The promises:
 ### Install software
 
 - kubectl https://kubernetes.io/docs/tasks/tools/
+- helm https://helm.sh/docs/helm/helm_install/
 - flux cli https://fluxcd.io/docs/installation/#install-the-flux-cli
 - git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
@@ -73,6 +74,11 @@ git clone https://<your repo>
 
 ## Exercises
 ---
+
+### Helm basics
+
+* [Deploy and upgrade an app using Helm](exercises/helm-basics/helm-app)
+* [Setup a basic helm chart](exercises/helm-basics/helm-chart)
 
 ### Source controller
 
